@@ -1,0 +1,44 @@
+.main-content {
+    margin-top: 20px;
+    min-height: 420px;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 258px;
+    padding: 0 !important;
+    background-color: grey;
+    margin-top: 20px;
+}
+
+.footer-middle {
+    padding-top: 20px;
+}
+
+.footer-middle .container {
+    width: 50%;
+}
+
+.footer-middle .footer-pad {
+    text-align: left;
+}
+
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        background-color: olive;
+        height: 290px;
+    }
+
+    .footer-middle .container {
+        text-align: center;
+        width: 100%;
+    }
+}
