@@ -3,13 +3,19 @@
     min-height: 420px;
 }
 
+.card{
+    width: 16rem;
+    margin-bottom: 10px;
+}
+
 footer {
     clear: both;
     position: relative;
     height: 258px;
     padding: 0 !important;
-    background-color: grey;
+    background-color: #f8f9fa;
     margin-top: 20px;
+    border-top: 1px solid rgb(238, 235, 235);
 }
 
 .footer-middle {
@@ -21,7 +27,7 @@ footer {
 }
 
 .footer-middle .footer-pad {
-    text-align: left;
+    text-align: justify;
 }
 
 ul.social-network {
@@ -31,9 +37,19 @@ ul.social-network {
     padding: 0;
 }
 
-@media screen and (max-width: 600px) {
+
+/* ukuran untuk mobile */
+@media screen and (max-width: 992px) {
+
+    .content-text{
+        margin-bottom: 10px;
+    }
+    
+    .card{
+        width: 100%;
+    }
+
     footer {
-        background-color: olive;
         height: 290px;
     }
 
@@ -41,4 +57,5 @@ ul.social-network {
         text-align: center;
         width: 100%;
     }
+    
 }

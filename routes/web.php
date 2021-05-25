@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', function () {
     return view('mainPages.home');
-});
+})->name('beranda');
+
+Route::get('/detail', function () {
+    return view('mainPages.detailArtikel');
+})->name('detailArtikel');
 
 Auth::routes();
 
