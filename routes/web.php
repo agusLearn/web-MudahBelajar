@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+
+// Untuk Halaman Tampilan User
 Route::get('/', function () {
     return view('mainPages.home');
 })->name('beranda');
@@ -23,6 +26,13 @@ Route::get('/', function () {
 Route::get('/detail', function () {
     return view('mainPages.detailArtikel');
 })->name('detailArtikel');
+
+
+
+// Untuk ke halaman admin
+Route::get('/admin', function () {
+    return view('adminPages.admin');
+})->name('adminpages');
 
 Auth::routes();
 

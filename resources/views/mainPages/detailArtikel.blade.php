@@ -53,7 +53,7 @@
             itaque, eius delectus obcaecati. Inventore deserunt laudantium doloribus quasi.
         </div>
     </div>
-    <div class="col-lg-3 d-sm-block d-md-block">
+    <div class="col-lg-3 d-none d-sm-block">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolor iusto. Commodi cupiditate minus aperiam totam tenetur facilis non consequatur aut voluptatum placeat qui, sequi maxime facere exercitationem unde inventore!
         <h5>Jancuk</h5>
     </div>
