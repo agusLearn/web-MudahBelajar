@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// Untuk Halaman Tampilan User
+// ROUTE UNTUK HALAMAN TAMPILAN USER
+
 Route::get('/', function () {
     return view('mainPages.home');
 })->name('beranda');
@@ -27,13 +28,31 @@ Route::get('/detail', function () {
     return view('mainPages.detailArtikel');
 })->name('detailArtikel');
 
+// END UNTUK ROUTE HALAMAN TAMPILAN USER
 
 
-// Untuk ke halaman admin
+// ---------------- Route Login and Register ---------------------
+Route::prefix('Login')->group(function(){
+    Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'loginPage'])->name('login');
+
+    Route::get('/registerPage', [\App\Http\Controllers\Auth\RegisterController::class, 'registerPage'])->name('register');
+});
+// ---------------- END Route Login and Register ---------------------
+
+
+
+// ROUTE UNTUK HALAMAN TAMPILAN ADMIN
+
 Route::get('/admin', function () {
     return view('adminPages.admin');
 })->name('adminpages');
 
-Auth::routes();
+Route::get('/createArticle', function(){
+    return view('adminPages.createArticle');
+})->name('createArticlePages');
+
+// END UNTUK ROUTE HALAMAN TAMPILAN ADMIN
+
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
