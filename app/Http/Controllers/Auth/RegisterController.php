@@ -47,7 +47,7 @@ class RegisterController extends Controller
     // }
 
     public function registerPage(){
-        return "Jancuk";
+        return view('loginPages.register');
     }
 
     /**

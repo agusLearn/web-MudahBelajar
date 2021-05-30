@@ -18,6 +18,23 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/favicon.png') }}">
+
+    <style>
+        .header{
+            position: absolute;
+            margin-top: -80px;
+        }
+
+        .header .lead{
+            margin-top: -20px;
+        }
+
+        form{
+            margin-top: 50px;
+        }
+
+        
+    </style>
 </head>
 
 <body>
@@ -29,17 +46,17 @@
                     <div class="left">
                         <div class="content">
                             <div class="header">
-                                <div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
+                                <div class="logo text-center"><img src="{{ asset('assets/img/logoMudahBelajar.png') }}" alt="Klorofil Logo" height="100"></div>
                                 <p class="lead">Login to your account</p>
                             </div>
                             <form class="form-auth-small" action="index.php">
                                 <div class="form-group">
-                                    <label for="signin-email" class="control-label sr-only">Email</label>
-                                    <input type="email" class="form-control" id="signin-email" value="samuel.gold@domain.com" placeholder="Email">
+                                    <label for="signin-username" class="control-label sr-only">Email</label>
+                                    <input type="text" class="form-control" id="signin-username" name="username" placeholder="Email or Username">
                                 </div>
                                 <div class="form-group">
                                     <label for="signin-password" class="control-label sr-only">Password</label>
-                                    <input type="password" class="form-control" id="signin-password" value="thisisthepassword" placeholder="Password">
+                                    <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password">
                                 </div>
                                 <div class="form-group clearfix">
                                     <label class="fancy-checkbox element-left">
@@ -64,8 +81,8 @@
                     <div class="right">
                         <div class="overlay"></div>
                         <div class="content text">
-                            <h1 class="heading">Free Bootstrap dashboard template</h1>
-                            <p>by The Develovers</p>
+                            <h1 class="heading"><b>Create and Share</b> Your Expertise That is Needed</h1>
+                            <p>Developer : Agus Nindo</p>
                         </div>
                     </div>
                     <div class="clearfix"></div>
