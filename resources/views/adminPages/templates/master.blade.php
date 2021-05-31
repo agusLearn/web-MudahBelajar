@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap/bootstrap.min.css') }}">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/linearicons/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/chartist/chartist-custom.css') }}">
@@ -19,6 +20,8 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
 	<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/favicon.png') }}">
+
+	@stack('custome-css')
 </head>
 
 <body>
@@ -63,26 +66,9 @@
 	<script src="{{ asset('assets/js/chartartist/chartist.min.js') }}"></script>
 	<script src="{{ asset('assets/js/klorofil-js/klorofil-common.js') }}"></script>
 
-	<!-- Link navigasi Active when click -->
-	<script>
-		$(function() {
-			var current = location.pathname;
-			$('#navigasiBar li a').each(function() {
 
-				var $this = $(this);
-
-				if ($this.attr('href').indexOf(current) !== -1) {
-					$('#navigasiBar li a').removeClass('active')
-					$this.addClass('active');
-				}
-			})
-		})
-	</script>
-
-
-
-	@stuck('chart-js')
-
+	<!--  -->
+	@stack('chart-js')
 
 </body>
 

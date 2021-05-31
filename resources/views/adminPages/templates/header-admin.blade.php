@@ -11,6 +11,7 @@
             <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
         </div>
 
+
         <!-- Menu navbar in right -->
         <div id="navbar-menu">
             <ul class="nav navbar-nav navbar-right">
@@ -21,11 +22,7 @@
                     </a>
                     <ul class="dropdown-menu notifications">
                         <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-                        <!-- <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-                        <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-                        <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-                        <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-                        <li><a href="#" class="more">See all notifications</a></li> -->
+
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -39,6 +36,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
                         <li><a href="{{ route('logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+
                     </ul>
                 </li>
             </ul>

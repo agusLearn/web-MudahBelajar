@@ -2,23 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-// ROUTE UNTUK HALAMAN TAMPILAN USER
+// ------------------ ROUTE UNTUK HALAMAN TAMPILAN USER ------------------
 
 Route::get('/', function () {
     return view('mainPages.home');
@@ -28,31 +13,47 @@ Route::get('/detail', function () {
     return view('mainPages.detailArtikel');
 })->name('detailArtikel');
 
-// END UNTUK ROUTE HALAMAN TAMPILAN USER
+// ------------------ END UNTUK ROUTE HALAMAN TAMPILAN USER ------------------
 
 
 // ---------------- Route Login and Register ---------------------
 Route::prefix('Login')->group(function(){
-    Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'loginPage'])->name('login');
+    Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'loginPage'])->name('loginPage');
+    Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 
     Route::get('/registerPage', [\App\Http\Controllers\Auth\RegisterController::class, 'registerPage'])->name('register');
+    Route::post('/prosesRegister', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('registration');
 });
 // ---------------- END Route Login and Register ---------------------
 
 
+// ------------------  ROUTE UNTUK HALAMAN TAMPILAN ADMIN  ------------------
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function(){
+    Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'viewAdmin'])->name('adminPages');
+    Route::get('/tableArticle', [\App\Http\Controllers\Admin\ArticleController::class, 'TableArticle'])->name('tableArticle');
+    Route::get('/createArticle', [\App\Http\Controllers\Admin\CreateArticleController::class, 'viewCreateArticle_form'])->name('createArticlePages');
 
-// ROUTE UNTUK HALAMAN TAMPILAN ADMIN
 
-Route::get('/admin', function () {
-    return view('adminPages.admin');
-})->name('adminpages');
 
-Route::get('/createArticle', function(){
-    return view('adminPages.createArticle');
-})->name('createArticlePages');
+    Route::post('/prosesCreateArticle', [\App\Http\Controllers\Admin\CreateArticleController::class, 'prosesCreateArticle'])->name('createArticle');
+});
+// ------------------ END ROUTE HALAMAN ADMIN ------------------
 
-// END UNTUK ROUTE HALAMAN TAMPILAN ADMIN
 
-// Auth::routes();
+// Proses Logout
+Route::get('/prosesLogout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+// // END UNTUK ROUTE HALAMAN TAMPILAN ADMIN
+
+// // Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

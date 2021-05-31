@@ -9,7 +9,7 @@
                 <a class="nav-link active" href="{{ route('beranda') }}">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="{{ route('detailArtikel') }}">DetailArtikel</a>
                 <a class="nav-link" href="#">Pricing</a>
-                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                <a class="nav-link" href="{{ route('loginPage') }}">Login</a>
             </div>
         </div>
     </div>
